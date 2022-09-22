@@ -39,7 +39,7 @@ node {
             // -------------------------------------------------------------------------
 
             stage('Authorize DevHub') {
-               rc = command "C:/Program Files/sfdx/bin/sfdx/sfdx auth:jwt:grant --instanceurl ${SFDC_HOST_DH} --clientid ${CONNECTED_APP_CONSUMER_KEY_DH} --username ${HUB_ORG_DH} --jwtkeyfile ${JWT_CRED_ID_DH} --setdefaultdevhubusername --setalias HubOrg"
+               rc = command "C:/CLI/sfdx/bin/sfdx auth:jwt:grant --instanceurl ${SFDC_HOST_DH} --clientid ${CONNECTED_APP_CONSUMER_KEY_DH} --username ${HUB_ORG_DH} --jwtkeyfile ${JWT_CRED_ID_DH} --setdefaultdevhubusername --setalias HubOrg"
                 if (rc != 0) {
                     error 'Salesforce dev hub org authorization failed.'
                 }
